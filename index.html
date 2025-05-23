@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>To Do</title>
+</head>
+<body>
+    <header>
+        <h1>To-Do List</h1>
+    </header>
+    <main>
+        <div id="header">
+            <input type="text" placeholder="Add a new Task...">
+            <button id="add-button">Add</button>
+        </div>
+        <section>
+            <div id="task-container"></div>
+        </section>
+        <div id="counters">
+            <span id="total-count">Total: 0</span>
+            <span id="completed-count">Completadas: 0</span>
+            <span id="pending-count">Pendientes: 0</span>
+        </div> 
+    </main>
+    <div id="filters">
+        <button data-filter="all">Todas</button>
+        <button data-filter="completed">Completadas</button>
+        <button data-filter="pending">Pendientes</button>
+    </div>      
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

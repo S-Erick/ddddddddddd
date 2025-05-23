@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+:root{
+    --gap: .5rem .9rem;
+    --gap-2: .8rem;
+    --font-size: 1rem;
+
+    --text-color: rgb(53, 53, 53);
+    --main-color: #137eed;
+    --color-2: #fdfdff;
+    --color-3: #b9b9b9;
+    --background-color: #edeff1;
+
+    --border: 1px solid var(--background-color);
+    --border-radius-1: 10px;
+    --border-radius-2: 5px;
+    --border-radius-3: 4px;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+    background-color: var(--background-color);
+}
+header > h1{
+    font-weight: 600;
+}
+main{
+    width: 20.5rem;
+    aspect-ratio: 1/.9;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    'div'
+    'sec'
+    'count';
+    background-color: var(--color-2);
+    border-radius: var(--border-radius-1);
+}
+main > #header{
+    width: 100%;
+    padding: var(--gap-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: div;
+    border-bottom: var(--border);
+}
+main > #header > input{
+    padding: var(--gap);
+    font-size: var(--font-size);
+    border-radius: var(--border-radius-2);
+    border: var(--border);
+}
+main > #header > input:focus{
+    outline: none;
+}
+main > #header > button{
+    padding: var(--gap);
+    font-size: var(--font-size);
+    border-radius: var(--border-radius-2);
+    background-color: var(--main-color);
+    color: var(--color-2);
+    border: none;
+}
+main > section{
+    position: relative;
+    overflow-y: scroll;
+    width: 100%;
+    grid-area: sec;
+}
+main > section::-webkit-scrollbar{
+    display: none;
+}
+#task-container{
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main > #counters{
+    margin: 0 0 0 .4rem;
+    width: 100%;
+    grid-area: count;
+    display: flex;
+    gap: var(--gap-2);
+    font-size: .7rem;
+    color: var(--color-3);
+}
+#filters button{
+    padding: var(--gap);
+    background-color: var(--color-2);
+    border: var(--border);
+    color: var(--text-color);
+    border-radius: var(--border-radius-2);
+    transition: all .3s ease-in-out;
+}
+#filters button:hover{
+    background-color: var(--background-color);
+    border: 1px solid #b9b9b925;
+}
+#filters button.active{
+    background-color: var(--background-color);
+    border: 1px solid #b9b9b925;
+}
